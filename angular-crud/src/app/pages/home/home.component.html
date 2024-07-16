@@ -1,0 +1,20 @@
+<!-- import header section on home page -->
+<app-navbar></app-navbar>
+<section class="container py-5">
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">#ID</th>
+        <th scope="col">Title</th>
+        <th scope="col">UserID</th>        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of userData">
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.title}}</td>
+        <td>{{item.userId}}</td>       
+      </tr>     
+    </tbody>
+  </table>
+</section>

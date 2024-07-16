@@ -1,0 +1,35 @@
+<!-- import header section on home page -->
+<app-navbar></app-navbar>
+<!-- signIn page UI -->
+<section class="container py-5 my-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-5">
+            <div class="card shadow border-0">
+                <div class="card-header h5 bg-primary py-3 text-white">Sign In</div>
+                <div class="card-body p-3">
+                    <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Name</label>
+                            <input type="text" class="form-control shadow-sm form-control-lg" formControlName="name"  placeholder="Enter your name">     
+                            <div class="small text-danger" *ngIf="name && name.invalid">This field is Required.</div>                     
+                          </div>
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label">Email address</label>
+                          <input type="email" class="form-control shadow-sm form-control-lg" formControlName="email" placeholder="Enter your email">     
+                          <div class="small text-danger" *ngIf="email && email.invalid">Email field is required.</div>                     
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Password</label>
+                          <input type="password" class="form-control shadow-sm form-control-lg" formControlName="password" placeholder="Enter your password">
+                          <div class="small text-danger" *ngIf="password && password.invalid">This field is Required.</div>
+                        </div>                       
+                        <div class="text-center">
+                        <button type="submit" class="btn btn-primary shadow-sm btn-lg btn-block px-4" [disabled]="loginForm.invalid">Sign In</button>
+                    </div>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /signIn page Ui -->
